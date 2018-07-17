@@ -41,27 +41,6 @@
           "value": "hub"
         }
       ]
-    },
-    {
-      "name": "chrome2",
-      "memory": 128,
-      "essential": true,
-      "image": "selenium/node-chrome:latest",
-      "links": [
-        "hub"
-      ],
-      "mountPoints": [
-        {
-          "sourceVolume": "memory",
-          "containerPath": "/dev/shm"
-        }
-      ],
-      "environment": [
-        {
-          "name": "HUB_HOST",
-          "value": "hub"
-        }
-      ]
     }
   ]
 }
