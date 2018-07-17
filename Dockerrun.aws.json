@@ -1,0 +1,67 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "memory",
+      "host": {
+        "sourcePath": "/dev/shm"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "hub",
+      "memory": 128,
+      "essential": true,
+      "image": "selenium/hub:latest",
+      "portMappings": [
+        {
+          "containerPort": 4444,
+          "hostPort": 4444
+        }
+      ]
+    },
+    {
+      "name": "chrome",
+      "memory": 128,
+      "essential": true,
+      "image": "selenium/node-chrome:latest",
+      "links": [
+        "hub"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "memory",
+          "containerPath": "/dev/shm"
+        }
+      ],
+      "environment": [
+        {
+          "name": "HUB_HOST",
+          "value": "hub"
+        }
+      ]
+    },
+    {
+      "name": "chrome2",
+      "memory": 128,
+      "essential": true,
+      "image": "selenium/node-chrome:latest",
+      "links": [
+        "hub"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "memory",
+          "containerPath": "/dev/shm"
+        }
+      ],
+      "environment": [
+        {
+          "name": "HUB_HOST",
+          "value": "hub"
+        }
+      ]
+    }
+  ]
+}
