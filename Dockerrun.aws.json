@@ -26,6 +26,9 @@
       "memory": 128,
       "essential": true,
       "image": "selenium/node-chrome",
+      "links": [
+        "hub"
+      ],
       "mountPoints": [
         {
           "sourceVolume": "memory",
