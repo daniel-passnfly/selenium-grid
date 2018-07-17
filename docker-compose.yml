@@ -4,25 +4,14 @@
 version: "2"
 services:
   chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
       - hub
     environment:
       HUB_HOST: hub
-
-  chrome2:
-    image: selenium/node-chrome:latest
-    volumes:
-      - /dev/shm:/dev/shm
-    depends_on:
-      - hub
-    environment:
-      HUB_HOST: hub
-
   hub:
-    image: selenium/hub:latest
+    image: selenium/hub
     ports:
-
       - "4444:4444"
