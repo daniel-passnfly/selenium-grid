@@ -47,8 +47,12 @@
       ],
       "environment": [
         {
-          "name": "HUB_HOST",
+          "name": "HUB_PORT_4444_TCP_ADDR",
           "value": "hub"
+        },
+        {
+          "name": "HUB_PORT_4444_TCP_PORT",
+          "value": "4444"
         }
       ]
     }
