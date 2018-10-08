@@ -6,6 +6,12 @@
       "host": {
         "sourcePath": "/dev/shm"
       }
+    },
+    {
+      "name": "storage-efs",
+      "host": {
+        "sourcePath": "/mnt/efs"
+      }
     }
   ],
   "containerDefinitions": [
@@ -33,6 +39,10 @@
         {
           "sourceVolume": "memory",
           "containerPath": "/dev/shm"
+        },
+        {
+          "sourceVolume": "storage-efs",
+          "containerPath": "/var/tmp"
         }
       ],
       "environment": [
