@@ -10,7 +10,7 @@
     {
       "name": "storage-efs",
       "host": {
-        "sourcePath": "/mnt/efs"
+        "sourcePath": "/var/tmp"
       }
     }
   ],
